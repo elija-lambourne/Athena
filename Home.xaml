@@ -108,8 +108,7 @@
                               Stretch="Uniform"/>
                     </Button>
                     <Button Style="{StaticResource SeamlessBtn}"
-                            HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                            Margin="0 0 -10  0">
+                            HorizontalAlignment="Left" VerticalAlignment="Bottom">
                         <Path Data="{StaticResource QuestionGeo}"
                               Fill="White"
                               Stretch="Uniform"/>
