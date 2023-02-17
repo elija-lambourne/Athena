@@ -1,0 +1,38 @@
+<!-- ####################################################################
+
+This file was generates automatically via the 
+IconPacks.Browser (MIT-License). 
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and 
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE 
+for more information.
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Icon-Name: 			MoonFill
+Iconpack:			BootstrapIcons
+Iconpack-Homepage: 	https://icons.getbootstrap.com/
+Iconpack-License:	https://github.com/twbs/icons/blob/main/LICENSE.md
+
+#####################################################################-->
+
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Width="64" 
+        Height="64">
+    <Canvas.LayoutTransform>
+        <MatrixTransform Matrix="1,0,0,-1,0,0" />
+    </Canvas.LayoutTransform>
+    <Path Data="M112.5 294.7875A14.4 14.4 0 0 0 114 278.7A135.15 135.15 0 0 1 97.5375 213.825C97.5375 138.43125 159 77.38125 234.75 77.38125C244.63125 77.38125 254.25 78.4125 263.49375 80.38125A14.75625 14.75625 0 0 0 278.68125 74.45625A13.74375 13.74375 0 0 0 278.1 57.7125A156.54375 156.54375 0 0 0 156.45 0C70.0125 0 0 69.6375 0 155.4375C0 220.0125 39.6375 275.4 96.075 298.875A14.1 14.1 0 0 0 112.5 294.7875z"
+          Stroke="{x:Null}"
+          Fill="#FF000000"
+          Stretch="Uniform"
+          Width="64"
+          Height="64"
+          SnapsToDevicePixels="False"
+          UseLayoutRounding="False"
+          StrokeThickness="0"
+          StrokeStartLineCap="flat"
+          StrokeEndLineCap="flat"
+          StrokeLineJoin="miter"/>
+</Canvas>
