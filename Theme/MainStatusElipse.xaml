@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <VisualBrush x:Key="EllipseVisualAppearance">
+        <VisualBrush.Visual>
+            <Ellipse StrokeThickness="1" Stroke="White" >
+                <Ellipse.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetName="opacityEllipse"
+                                    Storyboard.TargetProperty="StrokeDashArray[0]"
+                                    From="0" To="3.1416" Duration="0:0:0.5" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Ellipse.Triggers>
+            </Ellipse>
+        </VisualBrush.Visual>
+    </VisualBrush>
+</ResourceDictionary>
