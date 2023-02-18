@@ -21,8 +21,8 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,7 +31,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -198,54 +198,58 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AnalysisPage.xaml" />
-    <Page Include="AntiVirusPage.xaml" />
-    <Page Include="BackupsPage.xaml" />
-    <Page Include="Home.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="HomeWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="AnalysisPage.xaml.cs">
-      <DependentUpon>AnalysisPage.xaml</DependentUpon>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AntiVirusPage.xaml.cs">
-      <DependentUpon>AntiVirusPage.xaml</DependentUpon>
+    <Compile Include="Windows\HomeWindow.xaml.cs">
+      <DependentUpon>HomeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BackupsPage.xaml.cs">
-      <DependentUpon>BackupsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ButtonProperties.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
-    <Compile Include="Home.xaml.cs">
-      <DependentUpon>Home.xaml</DependentUpon>
+    <Compile Include="Windows\PassEntryWindow.xaml.cs">
+      <DependentUpon>PassEntryWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HomeWindow.xaml.cs">
-      <DependentUpon>HomeWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="PasswordPage.xaml" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AnalysisPage.xaml" />
+    <Page Include="Pages\AntiVirusPage.xaml" />
+    <Page Include="Pages\BackupsPage.xaml" />
+    <Page Include="Pages\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PasswordPage.xaml" />
     <Page Include="Theme\CustomFont.xaml" />
     <Page Include="Theme\MainStatusElipse.xaml" />
     <Page Include="Theme\SeamlessButtonTheme.xaml" />
+    <Page Include="Windows\HomeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PassEntryWindow.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PasswordPage.xaml.cs">
+    <Compile Include="Pages\AnalysisPage.xaml.cs">
+      <DependentUpon>AnalysisPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AntiVirusPage.xaml.cs">
+      <DependentUpon>AntiVirusPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BackupsPage.xaml.cs">
+      <DependentUpon>BackupsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PasswordPage.xaml.cs">
       <DependentUpon>PasswordPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -276,9 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Fonts\" />
-    <Folder Include="MWM\Model" />
-    <Folder Include="MWM\ViewModel\" />
-    <Folder Include="MWM\View\" />
+    <Folder Include="Native" />
     <Folder Include="resources" />
     <Folder Include="Theme\" />
   </ItemGroup>

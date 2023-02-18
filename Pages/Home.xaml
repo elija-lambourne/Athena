@@ -1,4 +1,4 @@
-<Page x:Class="Athena.BackupsPage"
+﻿<Page x:Class="Athena.Home"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -58,7 +58,7 @@
             <!-- Nav -->
             <StackPanel Grid.Column="0" Grid.Row="0"
                         Orientation="Vertical">
-                <Image HorizontalAlignment="Left" Source="Images/Logo.png" Height="57" Width="180" Margin="-10  0 0 0"/>
+                <Image HorizontalAlignment="Left" Source="../Images/Logo.png" Height="57" Width="180" Margin="-10  0 0 0"/>
                 <Button HorizontalAlignment="Left" Style="{StaticResource SeamlessBtn}" Margin="0 15 0 0">
                     <StackPanel Orientation="Horizontal">
                         <Path Width="30" Data="{StaticResource VirusGeo}" Fill="White" Stretch="Uniform" Margin="0 0 10 0"/>
@@ -108,8 +108,7 @@
                               Stretch="Uniform"/>
                     </Button>
                     <Button Style="{StaticResource SeamlessBtn}"
-                            HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                            Margin="0 0 -10  0">
+                            HorizontalAlignment="Left" VerticalAlignment="Bottom">
                         <Path Data="{StaticResource QuestionGeo}"
                               Fill="White"
                               Stretch="Uniform"/>

@@ -1,16 +1,33 @@
 #include "DbManager.h"
 #include <string>
+extern "C" __declspec(dllexport) bool store_from_csharp(const char* source,const char* password,const char* path);
+
+bool store_from_csharp(const char* source,const char* password,const char* path)
+{
+	const auto instance = db_manager::get_instance(path);
+	return instance->store_entry(pass_entry(password,source));;
+}
 
 //public
+db_manager* db_manager::get_instance(const std::string& db_path)
+{
+	if(instance_ != nullptr)
+	{
+		return instance_;
+	}
+	return new db_manager(db_path);
+}
+
 db_manager::db_manager(const std::string& db_path)
 {
 	this->db_path_ = db_path;
+	start_con();
 }
 db_manager::~db_manager()
 {
 	terminate_con();
 }
-//! MAJOR VULNERABILITIES DUE TO POSSIBLE SQL INJECTIONS
+
 bool db_manager::store_entry(const pass_entry& entry) const
 {
 	if (db_ == nullptr || !create_table())
@@ -36,7 +53,7 @@ bool db_manager::store_entry(const pass_entry& entry) const
 	return true;
 }
 
-//! MAJOR VULNERABILITIES DUE TO POSSIBLE SQL INJECTIONS
+
 std::vector<pass_entry> db_manager::search_by_src(const std::string& src) const
 {
 	std::vector<pass_entry> results;
@@ -44,7 +61,6 @@ std::vector<pass_entry> db_manager::search_by_src(const std::string& src) const
 	{
 		return results;
 	}
-	
 	
 	const std::string get_all = "SELECT * FROM PASSWORDS WHERE source=?;";
 	sqlite3_stmt* statement = nullptr;

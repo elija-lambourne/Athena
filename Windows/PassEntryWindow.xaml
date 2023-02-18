@@ -1,0 +1,96 @@
+<Window x:Class="Athena.Windows.PassEntryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Athena"
+        mc:Ignorable="d"
+        Title="Athena | Main" Height="350" Width="250"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Geometry x:Key="CloseBtnGeo">
+            M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z
+        </Geometry>
+        <Geometry x:Key="GlobeGeo">
+            M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z
+        </Geometry>
+        <Geometry x:Key="KeyGeo">
+            M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z
+            M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z
+        </Geometry>
+    </Window.Resources>
+    <Border CornerRadius="15" Background="{DynamicResource MaterialDesignPaper}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="19*"/>
+                <RowDefinition Height="102*"/>
+            </Grid.RowDefinitions>
+            <StackPanel  Grid.Row="0" Orientation="Horizontal">
+                <TextBlock FontWeight="ExtraLight" Foreground="WhiteSmoke"
+                           Margin="50 0 0 0" FontSize="20" VerticalAlignment="Center" >
+                    Password Entry
+                </TextBlock>
+                <Button Click="CloseWindow" 
+                    Margin="20 0 0 0"
+                    VerticalAlignment="Center" Style="{StaticResource SeamlessBtn}" Width="50" Height="20">
+                    <Path Stretch="Uniform" Data="{StaticResource CloseBtnGeo}" Fill="#FF6961"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <TextBlock Margin="0 20 0 0"  TextAlignment="Center" FontSize="15">Enter data about the password.</TextBlock>
+                <TextBox Margin="0 20 0 0" 
+                         x:Name="TxtSource" FontSize="15" Width="175" Height="35"
+                         BorderThickness="1.5" BorderBrush="{DynamicResource MaterialDesignDivider}"
+                         FontWeight="ExtraLight" Foreground="WhiteSmoke" 
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="10 0 0 0">
+                    <materialDesign:HintAssist.Hint>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Path VerticalAlignment="Center" Data="{StaticResource GlobeGeo}" Fill="WhiteSmoke" Margin="0 0 10 0"/>
+                            <TextBlock FontWeight="ExtraLight" TextWrapping="Wrap" VerticalAlignment="Center" >Source</TextBlock>
+                        </StackPanel>
+                    </materialDesign:HintAssist.Hint>
+                </TextBox>
+                <PasswordBox Margin="0 15 0 0"
+                    x:Name="TxtPassword" FontSize="15" Width="175" Height="35"
+                             BorderThickness="1.5"
+                             FontWeight="ExtraLight" Foreground="WhiteSmoke" 
+                             BorderBrush="{DynamicResource MaterialDesignDivider}" 
+                             Style="{StaticResource MaterialDesignOutlinedPasswordBox}" Padding="10 0 0 0">
+
+                    <materialDesign:HintAssist.Hint>
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="0 5 0 0">
+                            <Path VerticalAlignment="Center" Data="{StaticResource KeyGeo}" Fill="WhiteSmoke" Margin="0 0 10 0"/>
+                            <TextBlock FontWeight="ExtraLight" TextWrapping="Wrap" VerticalAlignment="Center">Password</TextBlock>
+                        </StackPanel>
+                    </materialDesign:HintAssist.Hint>
+                </PasswordBox>
+                <PasswordBox Margin="0 15 0 0"
+                             x:Name="TxtRepeatPassword" FontSize="15" Width="175" Height="35"
+                             BorderThickness="1.5"
+                             FontWeight="ExtraLight" Foreground="WhiteSmoke" 
+                             BorderBrush="{DynamicResource MaterialDesignDivider}" 
+                             Style="{StaticResource MaterialDesignOutlinedPasswordBox}" Padding="10 0 0 0">
+
+                    <materialDesign:HintAssist.Hint>
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="0 5 0 0">
+                            <Path VerticalAlignment="Center" Data="{StaticResource KeyGeo}" Fill="WhiteSmoke" Margin="0 0 10 0"/>
+                            <TextBlock FontWeight="ExtraLight" TextWrapping="Wrap" VerticalAlignment="Center">Repeat Password</TextBlock>
+                        </StackPanel>
+                    </materialDesign:HintAssist.Hint>
+                </PasswordBox>
+                <StackPanel Margin="0 30 0 0" >
+                    <TextBlock x:Name="PassNoMatch" Visibility="Hidden" TextAlignment="Center" Foreground="Red">Passwords do not match!</TextBlock>
+                    <Button Click="TryAddPassword"
+                            Width="200">
+                        Add To Passwords
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

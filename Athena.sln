@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena", "Athena.csproj", "{EED8020E-B958-4487-806D-2E3166F3CDA8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CE7965EC-B69E-4349-8210-72759E8336A4} = {CE7965EC-B69E-4349-8210-72759E8336A4}
+		{8975C558-5FB2-429E-B3FF-801E08B67867} = {8975C558-5FB2-429E-B3FF-801E08B67867}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BackupSystem", "BackupSystem\BackupSystem.vcxproj", "{8975C558-5FB2-429E-B3FF-801E08B67867}"
 EndProject
