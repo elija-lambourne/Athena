@@ -10,8 +10,9 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
-                <ResourceDictionary Source="Theme/SeamlessButtonTheme.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Theme/SeamlessButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/MainStatusElipse.xaml"/>
+                <ResourceDictionary Source="Theme/CustomFont.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

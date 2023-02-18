@@ -23,7 +23,7 @@ namespace Athena
         public HomeWindow()
         {
             InitializeComponent();
-            Home.Content = new Home();
+            Home.Content = new PasswordPage();
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
