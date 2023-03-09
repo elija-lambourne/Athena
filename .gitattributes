@@ -3,6 +3,7 @@
 ###############################################################################
 * text=auto
 *.c linguist-vendored
+PasswordManager/sqlite3/* linguist-vendored
 
 ###############################################################################
 # Set default behavior for command prompt diff.
